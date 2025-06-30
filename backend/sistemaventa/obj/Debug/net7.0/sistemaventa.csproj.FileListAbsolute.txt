@@ -76,3 +76,4 @@ D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\n
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.pdb
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.genruntimeconfig.cache
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\ref\sistemaventa.dll
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\appsettings.local.backup.json

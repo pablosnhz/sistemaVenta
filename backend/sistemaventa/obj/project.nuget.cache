@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mrHJ8e1IKKu/naPwIi3Od+UEYgkn9E+qQyfKXUSvwfHwnYBp2D2s/+aMv8qeZ8Jkg3/ZFyN91Gkc+IYBK9q9WA==",
+  "dgSpecHash": "aY2ZLCv81e+BcPgo6IIUolnNEh2NQYnrynJyFYVGiDYNeJvVx3KdfNf9HdGcoVNlyVIuOBqJLXWCjTx/MjqxkQ==",
   "success": true,
   "projectFilePath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\sistemaventa\\sistemaventa.csproj",
   "expectedPackageFiles": [
@@ -78,11 +78,7 @@
     "C:\\Users\\Cipper\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.16\\microsoft.netcore.app.host.win-x64.7.0.16.nupkg.sha512"
+    "C:\\Users\\Cipper\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

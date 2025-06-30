@@ -14,6 +14,7 @@ namespace Pos.Model.Context
 
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Negocio> Negocios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -73,6 +74,51 @@ namespace Pos.Model.Context
                 .HasDefaultValueSql("Now()");
 
                 entity.HasIndex(u => u.Telefono).IsUnique();
+            });
+
+            modelBuilder.Entity<Negocio>(static entity =>
+            {
+                entity.HasKey(n => n.idNegocio);
+
+                entity.Property(n => n.ruc)
+                .IsRequired()
+                .HasMaxLength (20)
+                .IsUnicode(false);
+
+                entity.Property(n => n.razonSocial)
+                .IsRequired()
+                .HasMaxLength (50)
+                .IsUnicode(false);
+
+                entity.Property(n => n.email)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entity.Property (n => n.telefono)
+                .IsRequired()
+                .HasMaxLength(15)
+                .IsUnicode(false);
+
+                entity.Property(n => n.direccion)
+                .IsRequired()
+                .HasMaxLength(500)
+                .IsUnicode(false);
+
+                entity.Property(n => n.propietario) 
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entity.Property(n => n.descuento)
+                .IsRequired()
+                .HasDefaultValue(0)
+                .HasPrecision(4,2)
+                .IsUnicode (false);
+
+                entity.Property(n => n.fechaRegistro)
+                .IsRequired()
+                .HasDefaultValueSql("Now()");
             });
         }
     }
