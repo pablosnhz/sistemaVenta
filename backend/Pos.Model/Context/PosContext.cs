@@ -15,6 +15,8 @@ namespace Pos.Model.Context
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Negocio> Negocios { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Producto> Productos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -119,6 +121,82 @@ namespace Pos.Model.Context
                 entity.Property(n => n.fechaRegistro)
                 .IsRequired()
                 .HasDefaultValueSql("Now()");
+            });
+
+            modelBuilder.Entity<Categoria>(static entity =>
+            {
+                entity.HasKey(c => c.idCategoria);
+
+                entity.Property(c => c.descripcion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entity.Property(c => c.estado)
+                .IsRequired ()
+                .HasMaxLength(8)
+                .IsUnicode(false);
+
+                entity.Property(c => c.fechaRegistro)
+                .IsRequired()
+                .HasDefaultValueSql("Now()");
+
+                // relacion con producto
+                Object value = entity.HasMany(c => c.Productos)
+                .WithOne(p => p.categoria)
+                .HasForeignKey(p => p.idCategoria)
+                .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasIndex(c => c.descripcion)
+                .IsUnique();
+            });
+
+            modelBuilder.Entity<Producto>(static entity =>
+            {
+                entity.HasKey(p => p.idProducto);
+
+                entity.Property (p => p.codigoBarra)
+                .IsRequired()
+                .HasMaxLength(30)
+                .IsUnicode(false);
+
+                entity.Property(p => p.descripcion)
+                .IsRequired()
+                .HasMaxLength (50)
+                .IsUnicode(false);
+
+                entity.HasOne(p => p.categoria)
+                .WithMany(c => c.Productos)
+                .IsRequired()
+                .HasForeignKey(p => p.idCategoria);
+
+                entity.Property(c => c.precioVenta)
+                .IsRequired()
+                .HasPrecision(18,2)
+                .IsUnicode (false);
+
+                entity.Property(p => p.stock)
+                .IsRequired()
+                .HasDefaultValue(0)
+                .IsUnicode(false);
+
+                entity.Property(p => p.stockMinimo)
+                .IsRequired()
+                .HasDefaultValue(5)
+                .IsUnicode(false);
+
+                entity.Property(p => p.estado)
+                .IsRequired()
+                .HasMaxLength(8)
+                .IsUnicode(false);
+
+                entity.Property(p => p.fechaRegistro)
+                .IsRequired()
+                .HasDefaultValueSql("Now()");
+
+                entity.HasIndex(c => c.codigoBarra).IsUnique();
+                entity.HasIndex(c => c.descripcion).IsUnique();
+
             });
         }
     }

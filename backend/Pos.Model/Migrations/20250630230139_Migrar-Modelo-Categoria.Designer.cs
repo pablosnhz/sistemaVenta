@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Pos.Model.Context;
@@ -11,9 +12,11 @@ using Pos.Model.Context;
 namespace Pos.Model.Migrations
 {
     [DbContext(typeof(PosContext))]
-    partial class PosContextModelSnapshot : ModelSnapshot
+    [Migration("20250630230139_Migrar-Modelo-Categoria")]
+    partial class MigrarModeloCategoria
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -116,70 +119,6 @@ namespace Pos.Model.Migrations
                     b.ToTable("Negocios");
                 });
 
-            modelBuilder.Entity("Pos.Model.Model.Producto", b =>
-                {
-                    b.Property<int>("idProducto")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idProducto"));
-
-                    b.Property<string>("codigoBarra")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .IsUnicode(false)
-                        .HasColumnType("character varying(30)");
-
-                    b.Property<string>("descripcion")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<string>("estado")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .IsUnicode(false)
-                        .HasColumnType("character varying(8)");
-
-                    b.Property<DateTime>("fechaRegistro")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("timestamp with time zone")
-                        .HasDefaultValueSql("Now()");
-
-                    b.Property<int>("idCategoria")
-                        .HasColumnType("integer");
-
-                    b.Property<decimal>("precioVenta")
-                        .HasPrecision(18, 2)
-                        .IsUnicode(false)
-                        .HasColumnType("numeric(18,2)");
-
-                    b.Property<int>("stock")
-                        .ValueGeneratedOnAdd()
-                        .IsUnicode(false)
-                        .HasColumnType("integer")
-                        .HasDefaultValue(0);
-
-                    b.Property<int>("stockMinimo")
-                        .ValueGeneratedOnAdd()
-                        .IsUnicode(false)
-                        .HasColumnType("integer")
-                        .HasDefaultValue(5);
-
-                    b.HasKey("idProducto");
-
-                    b.HasIndex("codigoBarra")
-                        .IsUnique();
-
-                    b.HasIndex("descripcion")
-                        .IsUnique();
-
-                    b.HasIndex("idCategoria");
-
-                    b.ToTable("Productos");
-                });
-
             modelBuilder.Entity("Pos.Model.Model.Rol", b =>
                 {
                     b.Property<int>("idRol")
@@ -263,17 +202,6 @@ namespace Pos.Model.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("Pos.Model.Model.Producto", b =>
-                {
-                    b.HasOne("Pos.Model.Model.Categoria", "categoria")
-                        .WithMany("Productos")
-                        .HasForeignKey("idCategoria")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("categoria");
-                });
-
             modelBuilder.Entity("Pos.Model.Model.Usuario", b =>
                 {
                     b.HasOne("Pos.Model.Model.Rol", "Rol")
@@ -283,11 +211,6 @@ namespace Pos.Model.Migrations
                         .IsRequired();
 
                     b.Navigation("Rol");
-                });
-
-            modelBuilder.Entity("Pos.Model.Model.Categoria", b =>
-                {
-                    b.Navigation("Productos");
                 });
 
             modelBuilder.Entity("Pos.Model.Model.Rol", b =>
