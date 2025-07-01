@@ -20,6 +20,8 @@ namespace Pos.Model.Context
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<DetalleVenta> DetallesVenta { get; set; }
 
+        public DbSet<NumeroDocumento> NumeroDocumentos { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -298,6 +300,22 @@ namespace Pos.Model.Context
                 entity.Property(dv => dv.total)
                 .IsRequired()
                 .IsUnicode (false);
+            });
+
+            modelBuilder.Entity<NumeroDocumento>(static entity =>
+            {
+                entity.HasKey(d => d.idNumeroDocumento);
+
+                entity.Property(d => d.documento)
+                .IsRequired()
+                .HasMaxLength(10)
+                .IsUnicode(false);
+
+                entity.Property(d => d.fechaRegistro)
+                .IsRequired()
+                .HasDefaultValueSql("Now()");
+
+                entity.HasIndex(d => d.documento).IsUnique();
             });
         }
     }

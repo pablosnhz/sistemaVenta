@@ -166,6 +166,33 @@ namespace Pos.Model.Migrations
                     b.ToTable("Negocios");
                 });
 
+            modelBuilder.Entity("Pos.Model.Model.NumeroDocumento", b =>
+                {
+                    b.Property<int>("idNumeroDocumento")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idNumeroDocumento"));
+
+                    b.Property<string>("documento")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .IsUnicode(false)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<DateTime>("fechaRegistro")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp with time zone")
+                        .HasDefaultValueSql("Now()");
+
+                    b.HasKey("idNumeroDocumento");
+
+                    b.HasIndex("documento")
+                        .IsUnique();
+
+                    b.ToTable("NumeroDocumentos");
+                });
+
             modelBuilder.Entity("Pos.Model.Model.Producto", b =>
                 {
                     b.Property<int>("idProducto")

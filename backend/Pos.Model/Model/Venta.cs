@@ -15,7 +15,7 @@ namespace Pos.Model.Model
 
         public int idVenta { get; set; }
         public string? factura { get; set; }
-        public DateTime fecha { get; set; }
+        public DateOnly fecha { get; set; }
         public string dni { get; set; } = string.Empty;
         public string cliente { get; set; } = string.Empty;
         public decimal descuento { get; set; }
@@ -26,7 +26,7 @@ namespace Pos.Model.Model
         public virtual Usuario? Usuario { get; set; }
         public EstadoVenta estado { get; set; } = EstadoVenta.Activa;
         public DateOnly? fechaAnulada { get; set; }
-        public string motivo { get; set; }
+        public string? motivo { get; set; }
         public int? usuarioAnula { get; set; }
 
         public virtual ICollection<DetalleVenta>? DetalleVentas { get; set; }
