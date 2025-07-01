@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Pos.Model.Context;
@@ -11,9 +12,11 @@ using Pos.Model.Context;
 namespace Pos.Model.Migrations
 {
     [DbContext(typeof(PosContext))]
-    partial class PosContextModelSnapshot : ModelSnapshot
+    [Migration("20250701011803_Migrar-Modelo-Venta")]
+    partial class MigrarModeloVenta
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,56 +56,6 @@ namespace Pos.Model.Migrations
                         .IsUnique();
 
                     b.ToTable("Categorias");
-                });
-
-            modelBuilder.Entity("Pos.Model.Model.DetalleVenta", b =>
-                {
-                    b.Property<int>("idDetalleVenta")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idDetalleVenta"));
-
-                    b.Property<int>("cantidad")
-                        .ValueGeneratedOnAdd()
-                        .IsUnicode(false)
-                        .HasColumnType("integer")
-                        .HasDefaultValue(1);
-
-                    b.Property<decimal>("descuento")
-                        .ValueGeneratedOnAdd()
-                        .IsUnicode(false)
-                        .HasColumnType("numeric")
-                        .HasDefaultValue(0m);
-
-                    b.Property<int>("idProducto")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("idVenta")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("nombreProducto")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<decimal>("precio")
-                        .HasPrecision(18, 2)
-                        .IsUnicode(false)
-                        .HasColumnType("numeric(18,2)");
-
-                    b.Property<decimal>("total")
-                        .IsUnicode(false)
-                        .HasColumnType("numeric");
-
-                    b.HasKey("idDetalleVenta");
-
-                    b.HasIndex("idProducto");
-
-                    b.HasIndex("idVenta");
-
-                    b.ToTable("DetallesVenta");
                 });
 
             modelBuilder.Entity("Pos.Model.Model.Negocio", b =>
@@ -375,31 +328,9 @@ namespace Pos.Model.Migrations
 
                     b.HasKey("idVenta");
 
-                    b.HasIndex("factura")
-                        .IsUnique();
-
                     b.HasIndex("idUsuario");
 
                     b.ToTable("Ventas");
-                });
-
-            modelBuilder.Entity("Pos.Model.Model.DetalleVenta", b =>
-                {
-                    b.HasOne("Pos.Model.Model.Producto", "Producto")
-                        .WithMany()
-                        .HasForeignKey("idProducto")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Pos.Model.Model.Venta", "Venta")
-                        .WithMany("DetalleVentas")
-                        .HasForeignKey("idVenta")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Producto");
-
-                    b.Navigation("Venta");
                 });
 
             modelBuilder.Entity("Pos.Model.Model.Producto", b =>
@@ -427,7 +358,7 @@ namespace Pos.Model.Migrations
             modelBuilder.Entity("Pos.Model.Model.Venta", b =>
                 {
                     b.HasOne("Pos.Model.Model.Usuario", "Usuario")
-                        .WithMany("Ventas")
+                        .WithMany()
                         .HasForeignKey("idUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -443,16 +374,6 @@ namespace Pos.Model.Migrations
             modelBuilder.Entity("Pos.Model.Model.Rol", b =>
                 {
                     b.Navigation("Usuarios");
-                });
-
-            modelBuilder.Entity("Pos.Model.Model.Usuario", b =>
-                {
-                    b.Navigation("Ventas");
-                });
-
-            modelBuilder.Entity("Pos.Model.Model.Venta", b =>
-                {
-                    b.Navigation("DetalleVentas");
                 });
 #pragma warning restore 612, 618
         }

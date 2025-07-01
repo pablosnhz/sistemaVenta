@@ -17,6 +17,8 @@ namespace Pos.Model.Context
         public DbSet<Negocio> Negocios { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Producto> Productos { get; set; }
+        public DbSet<Venta> Ventas { get; set; }
+        public DbSet<DetalleVenta> DetallesVenta { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -197,6 +199,105 @@ namespace Pos.Model.Context
                 entity.HasIndex(c => c.codigoBarra).IsUnique();
                 entity.HasIndex(c => c.descripcion).IsUnique();
 
+            });
+
+            modelBuilder.Entity<Venta>(static entity =>
+            {
+                entity.HasKey(v => v.idVenta);
+
+                entity.Property(v => v.factura)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+
+                entity.Property(v => v.fecha)
+                .IsRequired()
+                .HasDefaultValueSql("Now()");
+
+                entity.Property(v => v.dni)
+                .IsRequired()
+                .HasMaxLength(20)
+                .IsUnicode (false);
+
+                entity.Property(v => v.cliente)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entity.Property(v => v.descuento)
+                .IsRequired()
+                .HasDefaultValue(0)
+                .HasPrecision(4, 2)
+                .IsUnicode();
+
+                entity.Property(v => v.total)
+                .IsRequired()
+                .HasDefaultValue(0)
+                .HasPrecision(18, 2)
+                .IsUnicode();
+
+                // hicimos la conversion de estado
+                entity.Property(v => v.estado)
+                .IsRequired()
+                .HasConversion<string>();
+
+                entity.Property(v => v.fechaAnulada)
+                .IsRequired(false);
+
+                entity.Property(v => v.motivo)
+                .IsRequired(false)
+                .HasColumnType("TEXT");
+
+                entity.Property(v => v.usuarioAnula)
+                .IsRequired(false);
+
+                // especificamos que en venta puede haber muchos detalles de venta
+                object value = entity.HasMany(v => v.DetalleVentas)
+                .WithOne(dv => dv.Venta)
+                .HasForeignKey(dv => dv.idVenta)
+                .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasIndex(v => v.factura).IsUnique();
+            });
+
+            modelBuilder.Entity<DetalleVenta>(static entity =>
+            {
+                entity.HasKey(dv => dv.idDetalleVenta);
+
+                entity.HasOne(dv => dv.Venta)
+                .WithMany(v => v.DetalleVentas)
+                .HasForeignKey(dv => dv.idVenta)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasOne(dv => dv.Producto)
+                .WithMany()
+                .HasForeignKey(dv => dv.idProducto)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+                entity.Property(dv => dv.nombreProducto)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entity.Property(dv => dv.precio)
+                .IsRequired()
+                .HasPrecision(18, 2)
+                .IsUnicode(false);
+
+                entity.Property(dv => dv.cantidad)
+                .IsRequired()
+                .HasDefaultValue(1)
+                .IsUnicode(false);
+
+                entity.Property(dv => dv.descuento)
+                .IsRequired()
+                .HasDefaultValue(0)
+                .IsUnicode(false);
+
+                entity.Property(dv => dv.total)
+                .IsRequired()
+                .IsUnicode (false);
             });
         }
     }
