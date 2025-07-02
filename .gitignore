@@ -1,3 +1,18 @@
 
-#Backend
+#general
+*.log
+*.tmp
+*.swp
+*.DS_Store
+Thumbs.db
+
+#backend
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
 /backend/sistemaventa/appsettings*.json

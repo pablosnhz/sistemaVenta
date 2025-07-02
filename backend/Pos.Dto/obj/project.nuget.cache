@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xGJMZZjJXsB87zNDbZmZR2/pALRKf7Cm/LZZVoomyqKS4ACj06iqDUNDNNgulqRnONPSTtx4qNWvfp3VkJGIlg==",
+  "dgSpecHash": "rY5OfAVf2LuV4Px4QhfqHhjqFu4T/UGTF9AXL47m9rY2gxJZu6riQGBYdNC10HRFJTqkEIJCflB/Fqk9mlXl3Q==",
   "success": true,
   "projectFilePath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Dto\\Pos.Dto.csproj",
   "expectedPackageFiles": [
@@ -57,7 +57,10 @@
     "C:\\Users\\Cipper\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\system.security.cryptography.xml\\8.0.2\\system.security.cryptography.xml.8.0.2.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512"
+    "C:\\Users\\Cipper\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
   ],
   "logs": []
 }
