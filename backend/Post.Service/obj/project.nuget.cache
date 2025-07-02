@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jZPOeF652AXSFNP9Sl9PLQsV0RaH38xesMosRfIERy1N0RWC319bYSQ02cPuzdZ/WIS5mu6Ux9T0fzf+/gL0nQ==",
-  "success": true,
-  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Post.Service.csproj",
+  "dgSpecHash": "kOPtJB/bF1sB0CC+I+UEj0FPMz2HQ2gZiQvUjfAzQ6vIMaCcIYBVPYhujT4gLhfVYdAIbG1Ud0dR2eJnv697Fw==",
+  "success": false,
+  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Pos.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cipper\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
@@ -64,18 +64,14 @@
     "C:\\Users\\Cipper\\.nuget\\packages\\system.security.cryptography.xml\\8.0.2\\system.security.cryptography.xml.8.0.2.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+    "C:\\Users\\Cipper\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
   "logs": [
     {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.IdentityModel.Tokens.Jwt' 7.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
-      "libraryId": "System.IdentityModel.Tokens.Jwt",
+      "code": "NU1104",
+      "level": "Error",
+      "message": "No se encuentra el proyecto \"D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj\". Compruebe que la referencia al proyecto sea válida y que exista el archivo de proyecto.",
+      "libraryId": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj",
       "targetGraphs": [
         "net7.0"
       ]

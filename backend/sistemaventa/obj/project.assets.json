@@ -1320,6 +1320,20 @@
           "bin/placeholder/Pos.Model.dll": {}
         }
       },
+      "Pos.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity": "2.3.1",
+          "Pos.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Pos.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pos.Repository.dll": {}
+        }
+      },
       "Post.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -1342,7 +1356,7 @@
           "Microsoft.AspNetCore.Identity": "2.3.1",
           "Microsoft.IdentityModel.Tokens": "7.0.0",
           "Pos.Dto": "1.0.0",
-          "Post.Repository": "1.0.0",
+          "Pos.Repository": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "7.0.0"
         },
         "compile": {
@@ -3334,6 +3348,11 @@
       "path": "../Pos.Model/Pos.Model.csproj",
       "msbuildProject": "../Pos.Model/Pos.Model.csproj"
     },
+    "Pos.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Post.Repository/Pos.Repository.csproj",
+      "msbuildProject": "../Post.Repository/Pos.Repository.csproj"
+    },
     "Post.Repository/1.0.0": {
       "type": "project",
       "path": "../Post.Repository/Post.Repository.csproj",
@@ -3398,11 +3417,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3435,24 +3449,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[7.0.16, 7.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3461,7 +3457,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

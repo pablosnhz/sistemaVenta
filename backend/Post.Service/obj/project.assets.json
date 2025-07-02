@@ -2578,10 +2578,10 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper >= 7.0.1",
+      "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj",
       "Microsoft.AspNetCore.Identity >= 2.3.1",
       "Microsoft.IdentityModel.Tokens >= 7.0.0",
       "Pos.Dto >= 1.0.0",
-      "Post.Repository >= 1.0.0",
       "System.IdentityModel.Tokens.Jwt >= 7.0.0"
     ]
   },
@@ -2591,9 +2591,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Post.Service.csproj",
-      "projectName": "Post.Service",
-      "projectPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Post.Service.csproj",
+      "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Pos.Service.csproj",
+      "projectName": "Pos.Service",
+      "projectPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Pos.Service.csproj",
       "packagesPath": "C:\\Users\\Cipper\\.nuget\\packages\\",
       "outputPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\obj\\",
       "projectStyle": "PackageReference",
@@ -2615,8 +2615,8 @@
             "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Dto\\Pos.Dto.csproj": {
               "projectPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Dto\\Pos.Dto.csproj"
             },
-            "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Repository\\Post.Repository.csproj": {
-              "projectPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Repository\\Post.Repository.csproj"
+            "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj": {
+              "projectPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj"
             }
           }
         }
@@ -2625,11 +2625,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2664,36 +2659,21 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
     {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.IdentityModel.Tokens.Jwt' 7.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
-      "libraryId": "System.IdentityModel.Tokens.Jwt",
+      "code": "NU1104",
+      "level": "Error",
+      "message": "No se encuentra el proyecto \"D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj\". Compruebe que la referencia al proyecto sea válida y que exista el archivo de proyecto.",
+      "libraryId": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj",
       "targetGraphs": [
         "net7.0"
       ]
