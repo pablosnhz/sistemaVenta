@@ -672,26 +672,13 @@
           "Pos.Model.dll": {}
         }
       },
-      "Post.Repository/1.0.0": {
+      "Pos.Repository/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity": "2.3.1",
           "Pos.Model": "1.0.0"
         },
         "runtime": {
-          "Post.Repository.dll": {}
-        }
-      },
-      "Post.Service/1.0.0": {
-        "dependencies": {
-          "AutoMapper": "7.0.1",
-          "Microsoft.AspNetCore.Identity": "2.3.1",
-          "Microsoft.IdentityModel.Tokens": "7.0.0",
-          "Pos.Dto": "1.0.0",
-          "Post.Repository": "1.0.0",
-          "System.IdentityModel.Tokens.Jwt": "7.0.0"
-        },
-        "runtime": {
-          "Post.Service.dll": {}
+          "Pos.Repository.dll": {}
         }
       }
     }
@@ -1237,12 +1224,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Post.Repository/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Post.Service/1.0.0": {
+    "Pos.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

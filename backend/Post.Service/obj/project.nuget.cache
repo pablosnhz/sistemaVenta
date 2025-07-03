@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kOPtJB/bF1sB0CC+I+UEj0FPMz2HQ2gZiQvUjfAzQ6vIMaCcIYBVPYhujT4gLhfVYdAIbG1Ud0dR2eJnv697Fw==",
-  "success": false,
-  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Pos.Service.csproj",
+  "dgSpecHash": "pLiNO/GH048/m1k8IZqbbH7djyG8vCGn3WvGEVA00keAG8bVyIKAbVXz/ri2y+GuG8e38ZLE4j5OhZ+GyH2uug==",
+  "success": true,
+  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Post.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cipper\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
@@ -66,15 +66,5 @@
     "C:\\Users\\Cipper\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "No se encuentra el proyecto \"D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj\". Compruebe que la referencia al proyecto sea válida y que exista el archivo de proyecto.",
-      "libraryId": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

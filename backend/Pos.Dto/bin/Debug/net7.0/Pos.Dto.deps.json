@@ -472,15 +472,6 @@
         "runtime": {
           "Pos.Model.dll": {}
         }
-      },
-      "Post.Repository/1.0.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Identity": "2.3.1",
-          "Pos.Model": "1.0.0"
-        },
-        "runtime": {
-          "Post.Repository.dll": {}
-        }
       }
     }
   },
@@ -869,11 +860,6 @@
       "hashPath": "system.text.encodings.web.8.0.0.nupkg.sha512"
     },
     "Pos.Model/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Post.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -2,8 +2,6 @@ D:\DescargasD\proyectospersonales\sistemaventas\backend\Pos.Dto\bin\Debug\net7.0
 D:\DescargasD\proyectospersonales\sistemaventas\backend\Pos.Dto\bin\Debug\net7.0\Pos.Dto.dll
 D:\DescargasD\proyectospersonales\sistemaventas\backend\Pos.Dto\bin\Debug\net7.0\Pos.Dto.pdb
 D:\DescargasD\proyectospersonales\sistemaventas\backend\Pos.Dto\bin\Debug\net7.0\Pos.Model.dll
-D:\DescargasD\proyectospersonales\sistemaventas\backend\Pos.Dto\bin\Debug\net7.0\Post.Repository.dll
-D:\DescargasD\proyectospersonales\sistemaventas\backend\Pos.Dto\bin\Debug\net7.0\Post.Repository.pdb
 D:\DescargasD\proyectospersonales\sistemaventas\backend\Pos.Dto\bin\Debug\net7.0\Pos.Model.pdb
 D:\DescargasD\proyectospersonales\sistemaventas\backend\Pos.Dto\obj\Debug\net7.0\Pos.Dto.csproj.AssemblyReference.cache
 D:\DescargasD\proyectospersonales\sistemaventas\backend\Pos.Dto\obj\Debug\net7.0\Pos.Dto.GeneratedMSBuildEditorConfig.editorconfig

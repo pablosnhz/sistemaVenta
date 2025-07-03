@@ -1105,6 +1105,20 @@
           "bin/placeholder/Pos.Model.dll": {}
         }
       },
+      "Pos.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity": "2.3.1",
+          "Pos.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Pos.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pos.Repository.dll": {}
+        }
+      },
       "Post.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -2569,6 +2583,11 @@
       "path": "../Pos.Model/Pos.Model.csproj",
       "msbuildProject": "../Pos.Model/Pos.Model.csproj"
     },
+    "Pos.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Post.Repository/Pos.Repository.csproj",
+      "msbuildProject": "../Post.Repository/Pos.Repository.csproj"
+    },
     "Post.Repository/1.0.0": {
       "type": "project",
       "path": "../Post.Repository/Post.Repository.csproj",
@@ -2578,10 +2597,10 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper >= 7.0.1",
-      "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj",
       "Microsoft.AspNetCore.Identity >= 2.3.1",
       "Microsoft.IdentityModel.Tokens >= 7.0.0",
       "Pos.Dto >= 1.0.0",
+      "Pos.Repository >= 1.0.0",
       "System.IdentityModel.Tokens.Jwt >= 7.0.0"
     ]
   },
@@ -2591,9 +2610,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Pos.Service.csproj",
-      "projectName": "Pos.Service",
-      "projectPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Pos.Service.csproj",
+      "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Post.Service.csproj",
+      "projectName": "Post.Service",
+      "projectPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\Post.Service.csproj",
       "packagesPath": "C:\\Users\\Cipper\\.nuget\\packages\\",
       "outputPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Service\\obj\\",
       "projectStyle": "PackageReference",
@@ -2615,8 +2634,8 @@
             "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Dto\\Pos.Dto.csproj": {
               "projectPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Dto\\Pos.Dto.csproj"
             },
-            "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj": {
-              "projectPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj"
+            "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Repository\\Pos.Repository.csproj": {
+              "projectPath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Repository\\Pos.Repository.csproj"
             }
           }
         }
@@ -2667,16 +2686,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "No se encuentra el proyecto \"D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj\". Compruebe que la referencia al proyecto sea válida y que exista el archivo de proyecto.",
-      "libraryId": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Pos.Repository\\Pos.Repository.csproj",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  }
 }

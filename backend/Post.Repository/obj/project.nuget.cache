@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "byczoCilgCg6HNacV+XFGPlf5S1D5e4K/DPXQCCpyFPCsHlxXWQLPwzyOjdj8/1vaY2VmHsrpsscWYc2TzF/Zw==",
+  "dgSpecHash": "/VgwUWWv7wKu5eNp4qPcso0RzdpaFuUE2lxqswQUmDb/JiTmacXPP62UTE0SUVVxuZzK9F/kqb45aMMpi3fH4w==",
   "success": true,
-  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Repository\\Pos.Repository.csproj",
+  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\sistemaventas\\backend\\Post.Repository\\Post.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.3.0\\microsoft.aspnetcore.authentication.2.3.0.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.3.0\\microsoft.aspnetcore.authentication.abstractions.2.3.0.nupkg.sha512",
@@ -54,7 +54,10 @@
     "C:\\Users\\Cipper\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\system.security.cryptography.xml\\8.0.2\\system.security.cryptography.xml.8.0.2.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512"
+    "C:\\Users\\Cipper\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512"
   ],
   "logs": []
 }
