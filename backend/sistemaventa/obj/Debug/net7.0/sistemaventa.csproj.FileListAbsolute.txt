@@ -1,5 +1,6 @@
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\appsettings.Development.json
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\appsettings.json
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\appsettings.local.backup.json
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\sistemaventa.exe
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\sistemaventa.deps.json
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\sistemaventa.runtimeconfig.json
@@ -49,8 +50,12 @@ D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\n
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Dto.dll
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Model.dll
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Repository.dll
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Service.dll
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Dto.pdb
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Model.pdb
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Service.pdb
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Repository.pdb
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.csproj.AssemblyReference.cache
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.GeneratedMSBuildEditorConfig.editorconfig
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.AssemblyInfoInputs.cache
@@ -72,6 +77,3 @@ D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\n
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.pdb
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.genruntimeconfig.cache
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\ref\sistemaventa.dll
-D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\appsettings.local.backup.json
-D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Repository.dll
-D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Repository.pdb

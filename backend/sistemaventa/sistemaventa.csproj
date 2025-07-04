@@ -18,7 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Pos.Dto\Pos.Dto.csproj" />
     <ProjectReference Include="..\Pos.Model\Pos.Model.csproj" />
-    <ProjectReference Include="..\Post.Service\Post.Service.csproj" />
+    <ProjectReference Include="..\Post.Service\Pos.Service.csproj" />
   </ItemGroup>
 
 </Project>

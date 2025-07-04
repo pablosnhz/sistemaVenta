@@ -12,7 +12,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
           "Pos.Dto": "1.0.0",
           "Pos.Model": "1.0.0",
-          "Post.Service": "1.0.0",
+          "Pos.Service": "1.0.0",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -656,7 +656,7 @@
         "dependencies": {
           "FluentValidation": "11.11.0",
           "FluentValidation.AspNetCore": "11.0.0",
-          "Post.Repository": "1.0.0"
+          "Pos.Repository": "1.0.0"
         },
         "runtime": {
           "Pos.Dto.dll": {}
@@ -679,6 +679,19 @@
         },
         "runtime": {
           "Pos.Repository.dll": {}
+        }
+      },
+      "Pos.Service/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "7.0.1",
+          "Microsoft.AspNetCore.Identity": "2.3.1",
+          "Microsoft.IdentityModel.Tokens": "7.0.0",
+          "Pos.Dto": "1.0.0",
+          "Pos.Repository": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "7.0.0"
+        },
+        "runtime": {
+          "Pos.Service.dll": {}
         }
       }
     }
@@ -1225,6 +1238,11 @@
       "sha512": ""
     },
     "Pos.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Pos.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

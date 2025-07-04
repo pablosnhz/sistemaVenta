@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pos.Dto\Pos.Dto.csproj" />
-    <ProjectReference Include="..\Pos.Repository\Pos.Repository.csproj" />
+    <ProjectReference Include="..\Post.Repository\Pos.Repository.csproj" />
   </ItemGroup>
 
 </Project>

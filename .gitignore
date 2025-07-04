@@ -10,9 +10,11 @@ Thumbs.db
 .vs/
 bin/
 obj/
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
+*.dll
+*.exe
+*.cache
+*.v2
+*.nuget.cache
+*.assets.json
 
 /backend/sistemaventa/appsettings*.json
