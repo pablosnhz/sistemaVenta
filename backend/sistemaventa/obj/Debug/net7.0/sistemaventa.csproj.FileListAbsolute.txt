@@ -1,3 +1,9 @@
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.csproj.AssemblyReference.cache
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.GeneratedMSBuildEditorConfig.editorconfig
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.AssemblyInfoInputs.cache
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.AssemblyInfo.cs
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.csproj.CoreCompileInputs.cache
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.MvcApplicationPartsAssemblyInfo.cache
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\appsettings.Development.json
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\appsettings.json
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\appsettings.local.backup.json
@@ -7,6 +13,7 @@ D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\n
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\sistemaventa.dll
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\sistemaventa.pdb
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\AutoMapper.dll
+D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\FluentValidation.dll
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
@@ -56,13 +63,7 @@ D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\n
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Model.pdb
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Service.pdb
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\bin\Debug\net7.0\Pos.Repository.pdb
-D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.csproj.AssemblyReference.cache
-D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.GeneratedMSBuildEditorConfig.editorconfig
-D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.AssemblyInfoInputs.cache
-D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.AssemblyInfo.cs
-D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.csproj.CoreCompileInputs.cache
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.MvcApplicationPartsAssemblyInfo.cs
-D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\sistemaventa.MvcApplicationPartsAssemblyInfo.cache
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\staticwebassets\msbuild.sistemaventa.Microsoft.AspNetCore.StaticWebAssets.props
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\staticwebassets\msbuild.build.sistemaventa.props
 D:\DescargasD\proyectospersonales\sistemaventas\backend\sistemaventa\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.sistemaventa.props
