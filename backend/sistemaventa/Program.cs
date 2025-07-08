@@ -31,6 +31,13 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 //registro de repositorios con sus interfaces
 //builder.Services.AddScoped<Rol_Repository>();
 builder.Services.AddScoped<IRepository<Rol>, Rol_Repository>();
+builder.Services.AddScoped<IRepository<Categoria>, Categoria_Repository>();
+builder.Services.AddScoped<IRepository<Producto>, Producto_Repository>();
+
+builder.Services.AddScoped<INegocio_Repository, Negocio_Repository>();
+builder.Services.AddScoped<IDocumento_Repository, Documento_Repository>();
+
+
 
 
 var app = builder.Build();
