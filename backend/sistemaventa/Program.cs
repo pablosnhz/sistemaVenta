@@ -48,6 +48,9 @@ builder.Services.AddScoped<Venta_Repository>();
 
 // registro de services con sus interfaces
 builder.Services.AddScoped<Rol_Service>();
+builder.Services.AddScoped<Categoria_Service>();
+builder.Services.AddScoped<Producto_Service>();
+
 
 var app = builder.Build();
 
