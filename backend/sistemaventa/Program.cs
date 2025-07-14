@@ -6,6 +6,7 @@ using Pos.Model.Model;
 using Pos.Repository.Interface;
 using Microsoft.AspNetCore.Identity;
 using Pos.Service.Service;
+using Pos.Service.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,13 +44,14 @@ builder.Services.AddScoped<Producto_Repository>();
 
 builder.Services.AddScoped<Negocio_Repository>();
 builder.Services.AddScoped<IDocumento_Repository, Documento_Repository>();
-builder.Services.AddScoped<Usuario_Repository>();
-builder.Services.AddScoped<Venta_Repository>();
+builder.Services.AddScoped<IUsuario_Repository, Usuario_Repository>();
+builder.Services.AddScoped<IVenta_Repository, Venta_Repository>();
 
 // registro de services con sus interfaces
 builder.Services.AddScoped<Rol_Service>();
 builder.Services.AddScoped<Categoria_Service>();
 builder.Services.AddScoped<Producto_Service>();
+builder.Services.AddScoped<IUsuario_Service, Usuario_Service>();
 
 
 var app = builder.Build();
