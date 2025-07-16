@@ -42,7 +42,7 @@ builder.Services.AddScoped<Rol_Repository>();
 builder.Services.AddScoped<Categoria_Repository>();
 builder.Services.AddScoped<Producto_Repository>();
 
-builder.Services.AddScoped<Negocio_Repository>();
+builder.Services.AddScoped<INegocio_Repository ,Negocio_Repository>();
 builder.Services.AddScoped<IDocumento_Repository, Documento_Repository>();
 builder.Services.AddScoped<IUsuario_Repository, Usuario_Repository>();
 builder.Services.AddScoped<IVenta_Repository, Venta_Repository>();
@@ -52,7 +52,8 @@ builder.Services.AddScoped<Rol_Service>();
 builder.Services.AddScoped<Categoria_Service>();
 builder.Services.AddScoped<Producto_Service>();
 builder.Services.AddScoped<IUsuario_Service, Usuario_Service>();
-
+builder.Services.AddScoped<IDocumento_Service, DocumentoService>();
+builder.Services.AddScoped<INegocio_Service, Negocio_Service>();
 
 var app = builder.Build();
 
