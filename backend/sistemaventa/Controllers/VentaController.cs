@@ -101,7 +101,7 @@ namespace sistemaventa.Controllers
             }
         }
 
-        [HttpPut("{id}/anular")]
+        [HttpPut("{idVenta}/anular")]
         public async Task<IActionResult> AnularVenta(int idVenta, [FromBody] AnularVentaDto anularVentaDto)
         {
             if(string.IsNullOrWhiteSpace(anularVentaDto.motivo) || anularVentaDto.idUsuario <= 0)
