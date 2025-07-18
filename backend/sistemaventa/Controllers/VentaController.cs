@@ -39,23 +39,33 @@ namespace sistemaventa.Controllers
         }
 
         [HttpGet("buscar-fecha")]
-        public async Task<ActionResult<IEnumerable<VentaDto>>> BuscarPorFecha([FromQuery] DateOnly FechaInicio, [FromQuery] DateOnly FechaFin)
+        public async Task<ActionResult<IEnumerable<VentaDto>>> BuscarPorFecha([FromQuery] string FechaInicio, [FromQuery] string FechaFin)
         {
             try
             {
-                var entidad = await _ventaService.BuscarFecha(FechaInicio, FechaFin);
+                // valido y parseo las fechas
+                if (!DateOnly.TryParse(FechaInicio, out var fechaInicioParsed) ||
+                    !DateOnly.TryParse(FechaFin, out var fechaFinParsed))
+                {
+                    return BadRequest(new { message = "Formato de fecha inválido. Use el formato YYYY-MM-DD." });
+                }
+
+                var entidad = await _ventaService.BuscarFecha(fechaInicioParsed, fechaFinParsed);
+
                 if (entidad.Count == 0)
                 {
-                    return NotFound(new { StatusCode = 404, message = "No existe ningun registro para la consulta solicitada." });
+                    return NotFound(new { StatusCode = 404, message = "No existe ningún registro para la consulta solicitada." });
                 }
+
                 var entidadDto = _mapper.Map<List<VentaDto>>(entidad);
                 return Ok(entidadDto);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Error al obtener al buscar por fecha.", ex.Message });
+                return StatusCode(500, new { message = "Error al buscar por fecha.", ex.Message });
             }
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] VentaDto ventaDto)
