@@ -18,3 +18,31 @@ obj/
 *.assets.json
 
 /backend/sistemaventa/appsettings*.json
+
+
+
+# Node modules 
+node_modules/
+
+# Build 
+dist/
+.angular/
+.output/
+.cache/
+tmp/
+.temp/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE/editor 
+.vscode/
+.idea/
+*.code-workspace
+
+# OS-specific
+.DS_Store
+Thumbs.db
