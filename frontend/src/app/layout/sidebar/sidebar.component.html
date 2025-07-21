@@ -1,0 +1,76 @@
+<div class="container">
+  <header class="barra-superior">
+    <nav class="icon">
+      <button><mat-icon>logout</mat-icon></button>
+    </nav>
+  </header>
+
+  <aside class="barra-lateral">
+    <div class="logo">
+      <mat-icon>store</mat-icon>
+      <h1 class="text-logo">Horus</h1>
+    </div>
+
+    <hr class="linea-division" />
+
+    <nav>
+      <ul class="menu">
+        <li class="elemento-menu">
+          <a
+            href="#"
+            (click)="enlace_menu('administracion', $event)"
+            [attr.aria.expanded]="esSubMenuAbierto('administracion')"
+          >
+            <mat-icon>settings</mat-icon> Administracion
+            <mat-icon
+              class="expand-icon"
+              [class]="{ 'rotate-icon': esSubMenuAbierto('administracion') }"
+              >chevron_right</mat-icon
+            >
+          </a>
+          <ul
+            class="sub-menu"
+            [ngClass]="{ show: esSubMenuAbierto('administracion') }"
+          >
+            <li>
+              <a [routerLink]="['/pages/roles']" (click)="cerraSubMenu()"
+                >Rol</a
+              >
+            </li>
+            <li>
+              <a href="#">Usuario</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="elemento-menu">
+          <a href="#">
+            <mat-icon>assessment</mat-icon> Inventario
+            <mat-icon class="expand-icon">chevron_right</mat-icon>
+          </a>
+          <ul class="sub-menu">
+            <li>
+              <a href="#">Categorias</a>
+            </li>
+            <li>
+              <a href="#">Productos</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="contenido-principal">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sistema Venta. Todos los derechos reservados.</p>
+    </div>
+  </footer> -->
+</div>
+
+<!-- <h1>Prueba de texto con esta nueva font</h1>
+<p>Variante de texto que puede llegar a haber durante la creacion de la app.</p> -->
