@@ -99,7 +99,7 @@ builder.Services.AddCors(option =>
     option.AddPolicy("AccesoAngular", policy =>
     {
         // configuracion politica para permitir solicitudes desde el origen especificado
-        policy.WithOrigins("http//localhost:4200")
+        policy.WithOrigins("http://localhost:4200")
         .AllowAnyHeader()
         .AllowAnyMethod();
     });

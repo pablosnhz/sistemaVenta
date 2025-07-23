@@ -7,7 +7,13 @@
     <div class="tarjeta-main">
       <div class="barra-herramientas">
         <div class="grupo-busqueda">
-          <input type="text" class="tipo-fuente" placeholder="Buscar Rol" />
+          <input
+            type="text"
+            class="tipo-fuente"
+            placeholder="Buscar Rol"
+            [(ngModel)]="searchValue"
+            (input)="searchRegisters()"
+          />
           <button class="btn-agregar" (click)="modalOpen()">
             <mat-icon>add_circle</mat-icon> Nuevo Rol
           </button>
@@ -30,8 +36,12 @@
             <td data-label="Descripcion">{{ rol.descripcion }}</td>
             <td data-label="Estado">{{ rol.estado }}</td>
             <td class="acciones">
-              <button class="editar"><mat-icon>edit</mat-icon></button>
-              <button class="eliminar"><mat-icon>delete</mat-icon></button>
+              <button class="editar" (click)="modalOpen(rol)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button class="eliminar" (click)="eliminarRol(rol.idRol)">
+                <mat-icon>delete</mat-icon>
+              </button>
             </td>
           </tr>
         </tbody>
@@ -39,5 +49,10 @@
     </div>
   </section>
 
-  <app-form-rol *ngIf="modalTest" (cerrar)="modalClose()"></app-form-rol>
+  <app-form-rol
+    *ngIf="modalTest"
+    (cerrar)="modalClose()"
+    (guardar)="guardarRol($event)"
+    [rol]="editRegistros"
+  ></app-form-rol>
 </main>

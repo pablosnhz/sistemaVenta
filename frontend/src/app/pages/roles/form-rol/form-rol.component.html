@@ -4,19 +4,29 @@
     <button (click)="cerrarModal()"><mat-icon>close</mat-icon></button>
   </div>
 
-  <div class="modal-body">
-    <label>Rol:</label>
-    <input [(ngModel)]="descripcion" placeholder="Nombre del Rol" />
+  <form #rolForm="ngForm" (ngSubmit)="guardarForm(rolForm)">
+    <div class="modal-body">
+      <label>Rol:</label>
+      <input
+        [(ngModel)]="rol.descripcion"
+        name="rol"
+        placeholder="Nombre del Rol"
+        type="text"
+      />
 
-    <label>Estado:</label>
-    <select [(ngModel)]="estado">
-      <option value="Activo">Activo</option>
-      <option value="Inactivo">Inactivo</option>
-    </select>
-  </div>
+      <label>Estado:</label>
+      <select [(ngModel)]="rol.estado" name="estado" id="estado">
+        <option value="" disabled selected>Seleccione un estado</option>
+        <option value="Activo">Activo</option>
+        <option value="Inactivo">Inactivo</option>
+      </select>
+    </div>
 
-  <div class="modal-footer">
-    <button (click)="guardarRol()"><mat-icon>save</mat-icon> Guardar</button>
-    <button (click)="cerrarModal()"><mat-icon>close</mat-icon>Cancelar</button>
-  </div>
+    <div class="modal-footer">
+      <button type="submit"><mat-icon>save</mat-icon> Guardar</button>
+      <button type="button" (click)="cerrarModal()">
+        <mat-icon>close</mat-icon> Cancelar
+      </button>
+    </div>
+  </form>
 </div>
