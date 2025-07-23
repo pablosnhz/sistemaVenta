@@ -15,6 +15,24 @@ export class RolService {
     return this.http.get<Rol[]>(this.apiUrl).pipe(catchError(this.handleError));
   }
 
+  createRol(rol: Rol): Observable<any> {
+    return this.http
+      .post<any>(this.apiUrl, rol)
+      .pipe(catchError(this.handleError));
+  }
+
+  updateRol(id: number, rol: Rol): Observable<any> {
+    return this.http
+      .put<any>(`${this.apiUrl}/${id}`, rol)
+      .pipe(catchError(this.handleError));
+  }
+
+  deleteRol(id: number): Observable<any> {
+    return this.http
+      .delete<any>(`${this.apiUrl}/${id}`)
+      .pipe(catchError(this.handleError));
+  }
+
   private handleError(error: HttpErrorResponse) {
     let mensajeError = 'Ocurrio un error inesperado.';
     let statusCode = error.status || 0;

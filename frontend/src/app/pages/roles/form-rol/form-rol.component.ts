@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
+import { Rol } from '../../../core/models/rol';
 
 @Component({
   selector: 'app-form-rol',
@@ -12,17 +13,16 @@ import { FormsModule } from '@angular/forms';
 export class FormRolComponent {
   @Output() cerrar = new EventEmitter<void>();
 
-  descripcion: string = '';
-  estado: string = 'Activo';
+  @Input() rol: Rol = { idRol: 0, descripcion: '', estado: 'Activo' };
+  @Output() guardar = new EventEmitter<Rol>();
 
-  guardarRol() {
-    const nuevoRol = {
-      descripcion: this.descripcion,
-      estado: this.estado,
-    };
-    console.log('Nuevo rol:', nuevoRol);
-    // Acá podrías emitir el rol o llamar a un servicio
-    this.cerrar.emit(); // Cerramos el modal
+  guardarForm(rolForm: NgForm) {
+    rolForm.form.markAllAsTouched();
+    if (rolForm.invalid) {
+      window.alert('Se deben especificar todos los campos obligatorios.');
+      return;
+    }
+    this.guardar.emit(this.rol);
   }
 
   cerrarModal() {
