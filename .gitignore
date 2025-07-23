@@ -8,8 +8,8 @@ Thumbs.db
 
 #backend
 .vs/
-bin/
-obj/
+**/bin/
+**/obj/
 *.dll
 *.exe
 *.cache
