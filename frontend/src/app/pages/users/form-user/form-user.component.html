@@ -1,0 +1,59 @@
+<div class="modal">
+  <div class="modal-header">
+    <h3>Nuevo Usuario</h3>
+    <button (click)="cerrarModal()"><mat-icon>close</mat-icon></button>
+  </div>
+
+  <form #usuarioForm="ngForm" (ngSubmit)="guardarForm(usuarioForm)">
+    <div class="fila-flex">
+      <div class="izq">
+        <label for="nombre">Nombres</label>
+        <input type="text" name="nombre" required [(ngModel)]="users.nombres" />
+
+        <label for="apellido">Apellidos</label>
+        <input
+          type="text"
+          name="apellido"
+          required
+          [(ngModel)]="users.apellidos"
+        />
+
+        <label for="rol">Rol</label>
+        <select name="rol" id="rol" required [(ngModel)]="users.idRol">
+          <option value="" disabled selected>Seleccione un rol</option>
+          <option *ngFor="let rol of roles" [value]="rol.idRol">
+            {{ rol.descripcion }}
+          </option>
+        </select>
+      </div>
+
+      <div class="dere">
+        <label for="telefono">Teléfono</label>
+        <input
+          type="text"
+          name="telefono"
+          required
+          [(ngModel)]="users.telefono"
+        />
+
+        <label for="email">Email</label>
+        <input type="text" name="email" required [(ngModel)]="users.email" />
+
+        <label for="clave">Contraseña</label>
+        <input
+          type="password"
+          name="clave"
+          required
+          [(ngModel)]="users.clave"
+        />
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="submit"><mat-icon>save</mat-icon> Guardar</button>
+      <button type="button" (click)="cerrarModal()">
+        <mat-icon>close</mat-icon> Cancelar
+      </button>
+    </div>
+  </form>
+</div>
