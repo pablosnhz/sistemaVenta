@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 export class ListaRolComponent implements OnInit {
   modalTest: boolean = false;
 
-  registros: WritableSignal<Rol[]> = signal<Rol[]>([]);
+  registrosRoles: WritableSignal<Rol[]> = signal<Rol[]>([]);
   editRegistros: Rol = { idRol: 0, descripcion: '', estado: 'Activo' };
 
   //hago busqueda por input
@@ -36,7 +36,7 @@ export class ListaRolComponent implements OnInit {
         if (response && Array.isArray(response)) {
           // agregue this.allRegisters = response; para hacer uso del search por input
           this.allRegisters = response;
-          this.registros.set(response);
+          this.registrosRoles.set(response);
         }
       },
       error: (error) => {
@@ -50,7 +50,7 @@ export class ListaRolComponent implements OnInit {
     if (rol.idRol === 0) {
       this.rolService.createRol(rol).subscribe({
         next: (rolGuardado) => {
-          this.registros.set([...this.registros(), rolGuardado]);
+          this.registrosRoles.set([...this.registrosRoles(), rolGuardado]);
           this.getRolesFromService();
           window.alert('Registro guardado con exito!');
           this.modalClose();
@@ -63,13 +63,13 @@ export class ListaRolComponent implements OnInit {
       //actualizamos el registro
       this.rolService.updateRol(rol.idRol, rol).subscribe({
         next: (rolUpdate) => {
-          const index = this.registros().findIndex(
+          const index = this.registrosRoles().findIndex(
             (r) => r.idRol === rolUpdate.idRol
           );
           if (index > -1) {
-            const updateRoles = [...this.registros()];
+            const updateRoles = [...this.registrosRoles()];
             updateRoles[index] = rolUpdate;
-            this.registros.set(updateRoles);
+            this.registrosRoles.set(updateRoles);
           }
           this.getRolesFromService();
           window.alert('Registro actualizado con exito!');
@@ -85,14 +85,14 @@ export class ListaRolComponent implements OnInit {
   searchRegisters() {
     const value = this.searchValue.toLowerCase().trim();
     if (value === '') {
-      this.registros.set([...this.allRegisters]);
+      this.registrosRoles.set([...this.allRegisters]);
     } else {
       const filters = this.allRegisters.filter(
         (rol) =>
           rol.descripcion.toLowerCase().includes(value) ||
           rol.estado.toLowerCase().includes(value)
       );
-      this.registros.set(filters);
+      this.registrosRoles.set(filters);
     }
   }
 

@@ -1,0 +1,107 @@
+.modal {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 700px;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  input,
+  select {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+.fila-flex {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.izq,
+.dere {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.fila-flex input,
+.fila-flex select {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+form input,
+form select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  color: black;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 1rem;
+  text-align: right;
+
+  button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+
+  button:first-child {
+    background-color: #1976d2;
+    color: white;
+
+    &:hover {
+      background-color: #115293;
+    }
+  }
+
+  button:last-child {
+    background-color: #e0e0e0;
+    color: #333;
+
+    &:hover {
+      background-color: #bdbdbd;
+    }
+  }
+}
