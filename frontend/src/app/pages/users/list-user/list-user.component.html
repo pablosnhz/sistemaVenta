@@ -1,0 +1,72 @@
+<main class="contenido">
+  <section class="tarjeta">
+    <header class="titulo-tarjeta">
+      <h2>Listado de Usuarios</h2>
+    </header>
+
+    <div class="tarjeta-main">
+      <div class="barra-herramientas">
+        <div class="grupo-busqueda">
+          <input
+            type="text"
+            class="tipo-fuente"
+            placeholder="Buscar Usuario"
+            [(ngModel)]="searchValue"
+            (input)="searchRegisters()"
+          />
+          <button class="btn-agregar" (click)="modalOpen()">
+            <mat-icon>add_circle</mat-icon> Nuevo Usuario
+          </button>
+        </div>
+      </div>
+
+      <table class="tabla-roles">
+        <thead>
+          <tr>
+            <th class="ocultar-columna">ID</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Rol</th>
+            <th>Telefono</th>
+            <th>Email</th>
+            <th class="ocultar-columna">Clave</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let usuario of registrosUsers()">
+            <td data-label="Id" class="ocultar-columna">
+              {{ usuario.idUsuario }}
+            </td>
+            <td data-label="Descripcion">{{ usuario.nombres }}</td>
+            <td data-label="Estado">{{ usuario.apellidos }}</td>
+            <td data-label="Estado">{{ usuario.rolDescripcion }}</td>
+            <td data-label="Estado">{{ usuario.telefono }}</td>
+            <td data-label="Estado">{{ usuario.email }}</td>
+            <td data-label="Estado" class="ocultar-columna">
+              {{ usuario.clave }}
+            </td>
+            <td data-label="Estado">{{ usuario.estado }}</td>
+            <td class="acciones">
+              <button class="editar" (click)="modalOpen(usuario)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button class="eliminar" (click)="eliminarRol(usuario.idUsuario)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <app-form-user
+    *ngIf="modalTest"
+    (cerrar)="modalClose()"
+    (guardar)="guardarUsuario($event)"
+    [users]="editRegistros"
+  ></app-form-user>
+</main>
