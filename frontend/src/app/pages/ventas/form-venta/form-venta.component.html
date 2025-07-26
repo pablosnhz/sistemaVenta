@@ -15,6 +15,7 @@
               name="identificacion"
               class="tipo-fuente"
               placeholder="Dni del cliente"
+              autocomplete="off"
             />
           </div>
           <div class="derecha">
@@ -23,6 +24,7 @@
               name="cliente"
               class="tipo-fuente"
               placeholder="Nombre del cliente"
+              autocomplete="off"
             />
           </div>
         </div>
@@ -38,6 +40,7 @@
               placeholder="Buscar por codigo"
               [(ngModel)]="codigoProducto"
               (keyup.enter)="buscarProductoCodigo()"
+              autocomplete="off"
             />
           </div>
           <div class="derecha autocompletar-contenido">
@@ -50,6 +53,8 @@
               (input)="productosFilter()"
               (mousedown)="mostrarListaProductos()"
               (blur)="cerrarListaProductos()"
+              (keyup.enter)="agregarProductosTabla()"
+              autocomplete="off"
             />
             <ul class="autocompletar-lista" *ngIf="listaProductos">
               <li
@@ -79,15 +84,56 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td data-label="Id" class="ocultar-columna"></td>
-          <td data-label="IdVenta" class="ocultar-columna"></td>
-          <td data-label="IdProducto" class="ocultar-columna"></td>
-          <td data-label="Producto"></td>
-          <td data-label="Cantidad"></td>
-          <td data-label="Precio"></td>
-          <td data-label="Descuento"></td>
-          <td data-label="Total"></td>
+        <tr *ngFor="let detalle of detalleVentas">
+          <td data-label="Id" class="ocultar-columna">
+            {{ detalle.idDetalleVenta }}
+          </td>
+          <td data-label="IdVenta" class="ocultar-columna">
+            {{ detalle.idVenta }}
+          </td>
+          <td data-label="IdProducto" class="ocultar-columna">
+            {{ detalle.idProducto }}
+          </td>
+          <td data-label="Producto">{{ detalle.nombreProducto }}</td>
+
+          <td data-label="Cantidad">
+            <span
+              style="cursor: pointer"
+              title="Doble click para editar"
+              *ngIf="!detalle.editarCantidad"
+              (dblclick)="detalle.editarCantidad = true"
+              >{{ detalle.cantidad }}</span
+            >
+            <input
+              *ngIf="detalle.editarCantidad"
+              type="number"
+              [(ngModel)]="detalle.cantidad"
+              (keyup.enter)="validarCantidadVendida(detalle)"
+              (blur)="validarCantidadVendida(detalle)"
+            />
+          </td>
+
+          <td data-label="Precio">{{ detalle.precio | number : "1.2-2" }}</td>
+
+          <td data-label="Descuento">
+            <span
+              *ngIf="!detalle.editarDescuento"
+              (dblclick)="detalle.editarDescuento = true"
+              style="cursor: pointer"
+              title="Doble click para editar"
+            >
+              {{ detalle.descuento | number : "1.2-2" }}
+            </span>
+            <input
+              *ngIf="detalle.editarDescuento"
+              [(ngModel)]="detalle.descuento"
+              (keyup.enter)="validarCantidadDescuento(detalle)"
+              (blur)="validarCantidadDescuento(detalle)"
+              type="number"
+            />
+          </td>
+
+          <td data-label="Total">{{ detalle.total | number : "1.2-2" }}</td>
           <td data-label="Acciones" class="acciones">
             <button class="eliminar"><mat-icon>delete</mat-icon></button>
           </td>
