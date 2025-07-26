@@ -7,4 +7,7 @@ export interface DetalleVenta {
   cantidad: number;
   descuento: number;
   total: number;
+
+  editarCantidad?: boolean;
+  editarDescuento?: boolean;
 }
