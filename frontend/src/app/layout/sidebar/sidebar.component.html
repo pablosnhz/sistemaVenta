@@ -59,6 +59,33 @@
             </li>
           </ul>
         </li>
+
+        <li class="elemento-menu">
+          <a
+            href="#"
+            (click)="enlace_menu('ventas', $event)"
+            [attr.aria.expanded]="esSubMenuAbierto('ventas')"
+          >
+            <mat-icon>sell</mat-icon> Ventas
+            <mat-icon
+              class="expand-icon"
+              [class]="{ 'rotate-icon': esSubMenuAbierto('ventas') }"
+              >chevron_right</mat-icon
+            >
+          </a>
+          <ul class="sub-menu" [ngClass]="{ show: esSubMenuAbierto('ventas') }">
+            <li>
+              <a [routerLink]="['pages/ventas']" (click)="cerraSubMenu()"
+                >Nueva venta</a
+              >
+            </li>
+            <li>
+              <a [routerLink]="['pages/ventas']" (click)="cerraSubMenu()"
+                >Historial de ventas</a
+              >
+            </li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </aside>
