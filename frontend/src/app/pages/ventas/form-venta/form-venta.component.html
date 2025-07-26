@@ -50,6 +50,7 @@
               (input)="productosFilter()"
               (mousedown)="mostrarListaProductos()"
               (blur)="cerrarListaProductos()"
+              (keyup.enter)="agregarProductosTabla()"
             />
             <ul class="autocompletar-lista" *ngIf="listaProductos">
               <li
@@ -79,15 +80,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td data-label="Id" class="ocultar-columna"></td>
-          <td data-label="IdVenta" class="ocultar-columna"></td>
-          <td data-label="IdProducto" class="ocultar-columna"></td>
-          <td data-label="Producto"></td>
-          <td data-label="Cantidad"></td>
-          <td data-label="Precio"></td>
-          <td data-label="Descuento"></td>
-          <td data-label="Total"></td>
+        <tr *ngFor="let detalle of detalleVentas">
+          <td data-label="Id" class="ocultar-columna">
+            {{ detalle.idDetalleVenta }}
+          </td>
+          <td data-label="IdVenta" class="ocultar-columna">
+            {{ detalle.idVenta }}
+          </td>
+          <td data-label="IdProducto" class="ocultar-columna">
+            {{ detalle.idProducto }}
+          </td>
+          <td data-label="Producto">{{ detalle.nombreProducto }}</td>
+          <td data-label="Cantidad">{{ detalle.cantidad }}</td>
+          <td data-label="Precio">{{ detalle.precio }}</td>
+          <td data-label="Descuento">{{ detalle.descuento }}</td>
+          <td data-label="Total">{{ detalle.total }}</td>
           <td data-label="Acciones" class="acciones">
             <button class="eliminar"><mat-icon>delete</mat-icon></button>
           </td>
