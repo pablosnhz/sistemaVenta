@@ -5,6 +5,8 @@ import { Producto } from '../../../core/models/products';
 import { ProductosService } from '../../../core/services/productos.service';
 import { FormsModule } from '@angular/forms';
 import { DetalleVenta } from '../../../core/models/detalleVenta';
+import { Venta } from '../../../core/models/venta';
+import { VentaService } from '../../../core/services/venta.service';
 
 @Component({
   selector: 'app-form-venta',
@@ -29,7 +31,18 @@ export class FormVentaComponent implements OnInit {
 
   bottomSaveActive: boolean = false;
 
+  // post venta
+  venta: Venta = {
+    idVenta: 0,
+    dni: 'Sin identificacion.',
+    cliente: 'Cliente mostrador',
+    descuento: 0,
+    total: 0,
+    idUsuario: 13,
+  };
+
   private productoService = inject(ProductosService);
+  private ventaService = inject(VentaService);
 
   ngOnInit(): void {
     this.getProductosFromService();
@@ -260,5 +273,38 @@ export class FormVentaComponent implements OnInit {
     setTimeout(() => {
       this.listaProductos = false;
     }, 150);
+  }
+
+  // venta producto POST saveSale
+  guardarVenta(): void {
+    if (!this.venta.dni?.trim() || !this.venta.cliente?.trim()) {
+      window.alert('Se debe completar todos los campos requeridos.');
+      return;
+    }
+    if (this.detalleVentas.length === 0) {
+      window.alert(
+        'Se debe agregar al menos un producto antes de guardar la venta.'
+      );
+      return;
+    }
+
+    this.venta.descuento = this.descuento;
+    this.venta.total = this.TotalGeneral;
+    this.venta.idUsuario = 13;
+    this.venta.detalleVentas = this.detalleVentas;
+
+    this.ventaService.createVenta(this.venta).subscribe({
+      next: (response: any) => {
+        if (response && response.data) {
+          this.venta = response.data;
+          window.alert('La venta se ha registrado con exito!');
+
+          this.bottomSaveActive = false;
+        }
+      },
+      error: (error) => {
+        window.alert('Error al guardar la venta: ' + error.message);
+      },
+    });
   }
 }

@@ -16,6 +16,7 @@
               class="tipo-fuente"
               placeholder="Dni del cliente"
               autocomplete="off"
+              [(ngModel)]="venta.dni"
             />
           </div>
           <div class="derecha">
@@ -25,6 +26,7 @@
               class="tipo-fuente"
               placeholder="Nombre del cliente"
               autocomplete="off"
+              [(ngModel)]="venta.cliente"
             />
           </div>
         </div>
@@ -164,7 +166,11 @@
       <button class="boton btn-nuevo">
         <mat-icon>add_circle_outline</mat-icon> Nuevo
       </button>
-      <button class="boton btn-guardar" [disabled]="!bottomSaveActive">
+      <button
+        class="boton btn-guardar"
+        (click)="guardarVenta()"
+        [disabled]="!bottomSaveActive"
+      >
         <mat-icon>check</mat-icon>Guardar
       </button>
     </div>
