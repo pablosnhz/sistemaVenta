@@ -23,6 +23,12 @@ export class FormVentaComponent implements OnInit {
 
   detalleVentas: DetalleVenta[] = [];
 
+  subTotal: number = 0;
+  descuento: number = 0;
+  TotalGeneral: number = 0;
+
+  bottomSaveActive: boolean = false;
+
   private productoService = inject(ProductosService);
 
   ngOnInit(): void {
@@ -121,6 +127,8 @@ export class FormVentaComponent implements OnInit {
         this.detalleVentas.push(detalleVenta);
         this.calcularTotales(detalleVenta);
 
+        this.bottomSaveActive = this.detalleVentas.length > 0;
+
         this.codigoProducto = '';
         this.productoFiltro = '';
 
@@ -137,12 +145,45 @@ export class FormVentaComponent implements OnInit {
     }
   }
 
+  eliminarProducto(detalle: DetalleVenta): void {
+    const confirmar = confirm(
+      `Estas seguro que desea eliminar el producto: "${detalle.nombreProducto}"?`
+    );
+    if (!confirmar) {
+      return;
+    }
+
+    this.detalleVentas = this.detalleVentas.filter(
+      (fila) => fila.idProducto !== detalle.idProducto
+    );
+    this.totalGeneralVenta();
+    this.bottomSaveActive = this.detalleVentas.length > 0;
+  }
+
   calcularTotales(detalle: DetalleVenta): void {
     const cantidad = Number(detalle.cantidad) || 0;
     const precio = Number(detalle.precio) || 0;
     const descuento = Number(detalle.descuento) || 0;
 
     detalle.total = cantidad * precio - descuento;
+
+    this.totalGeneralVenta();
+  }
+
+  totalGeneralVenta(): void {
+    const subTotal = this.detalleVentas.reduce(
+      (sum, item) => sum + item.precio * item.cantidad,
+      0
+    );
+    const descuento = this.detalleVentas.reduce(
+      (sum, item) => sum + item.descuento,
+      0
+    );
+    const totalGeneral = subTotal - descuento;
+
+    this.subTotal = subTotal;
+    this.descuento = descuento;
+    this.TotalGeneral = totalGeneral;
   }
 
   validarCantidadVendida(detalle: DetalleVenta): void {
