@@ -135,7 +135,9 @@
 
           <td data-label="Total">{{ detalle.total | number : "1.2-2" }}</td>
           <td data-label="Acciones" class="acciones">
-            <button class="eliminar"><mat-icon>delete</mat-icon></button>
+            <button class="eliminar" (click)="eliminarProducto(detalle)">
+              <mat-icon>delete</mat-icon>
+            </button>
           </td>
         </tr>
       </tbody>
@@ -145,13 +147,15 @@
       <div class="totales">
         <div class="sub-total">
           <span>Subtotal:</span>
-          <div class="descuento">
-            <span>Descuento:</span>
-          </div>
-          <div class="total-general">
-            <span>Total General:</span>
-            <span class="valor"></span>
-          </div>
+          <span class="valor">{{ subTotal | currency }}</span>
+        </div>
+        <div class="descuento">
+          <span>Descuento:</span>
+          <span class="valor">{{ descuento | currency }}</span>
+        </div>
+        <div class="total-general">
+          <span>Total General:</span>
+          <span class="valor">{{ TotalGeneral | currency }}</span>
         </div>
       </div>
     </div>
@@ -160,7 +164,7 @@
       <button class="boton btn-nuevo">
         <mat-icon>add_circle_outline</mat-icon> Nuevo
       </button>
-      <button class="boton btn-guardar">
+      <button class="boton btn-guardar" [disabled]="!bottomSaveActive">
         <mat-icon>check</mat-icon>Guardar
       </button>
     </div>
