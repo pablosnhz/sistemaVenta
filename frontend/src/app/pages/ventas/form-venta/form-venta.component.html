@@ -12,19 +12,27 @@
           <div class="izquierda">
             <input
               type="text"
+              id="identificacion"
               name="identificacion"
               class="tipo-fuente"
               placeholder="Dni del cliente"
               autocomplete="off"
+              [(ngModel)]="venta.dni"
+              [disabled]="formBloqueado"
+              (keyup.enter)="moveFocusEnter('cliente')"
             />
           </div>
           <div class="derecha">
             <input
               type="text"
+              id="cliente"
               name="cliente"
               class="tipo-fuente"
               placeholder="Nombre del cliente"
               autocomplete="off"
+              [(ngModel)]="venta.cliente"
+              [disabled]="formBloqueado"
+              (keyup.enter)="moveFocusEnter('codigo')"
             />
           </div>
         </div>
@@ -36,11 +44,13 @@
             <input
               type="text"
               name="codigo"
+              id="codigo"
               class="tipo-fuente"
               placeholder="Buscar por codigo"
               [(ngModel)]="codigoProducto"
               (keyup.enter)="buscarProductoCodigo()"
               autocomplete="off"
+              [disabled]="formBloqueado"
             />
           </div>
           <div class="derecha autocompletar-contenido">
@@ -55,6 +65,7 @@
               (blur)="cerrarListaProductos()"
               (keyup.enter)="agregarProductosTabla()"
               autocomplete="off"
+              [disabled]="formBloqueado"
             />
             <ul class="autocompletar-lista" *ngIf="listaProductos">
               <li
@@ -110,6 +121,7 @@
               [(ngModel)]="detalle.cantidad"
               (keyup.enter)="validarCantidadVendida(detalle)"
               (blur)="validarCantidadVendida(detalle)"
+              [disabled]="formBloqueado"
             />
           </td>
 
@@ -130,12 +142,17 @@
               (keyup.enter)="validarCantidadDescuento(detalle)"
               (blur)="validarCantidadDescuento(detalle)"
               type="number"
+              [disabled]="formBloqueado"
             />
           </td>
 
           <td data-label="Total">{{ detalle.total | number : "1.2-2" }}</td>
           <td data-label="Acciones" class="acciones">
-            <button class="eliminar" (click)="eliminarProducto(detalle)">
+            <button
+              class="eliminar"
+              (click)="eliminarProducto(detalle)"
+              [disabled]="formBloqueado"
+            >
               <mat-icon>delete</mat-icon>
             </button>
           </td>
@@ -161,10 +178,14 @@
     </div>
 
     <div class="botones-acciones">
-      <button class="boton btn-nuevo">
+      <button class="boton btn-nuevo" (click)="nuevaVentaButton()">
         <mat-icon>add_circle_outline</mat-icon> Nuevo
       </button>
-      <button class="boton btn-guardar" [disabled]="!bottomSaveActive">
+      <button
+        class="boton btn-guardar"
+        (click)="guardarVenta()"
+        [disabled]="!bottomSaveActive"
+      >
         <mat-icon>check</mat-icon>Guardar
       </button>
     </div>
