@@ -30,6 +30,7 @@ export class FormVentaComponent implements OnInit {
   TotalGeneral: number = 0;
 
   bottomSaveActive: boolean = false;
+  formBloqueado: boolean = false;
 
   // post venta
   venta: Venta = {
@@ -46,6 +47,24 @@ export class FormVentaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProductosFromService();
+
+    setTimeout(() => {
+      const inputIdFocus = document.getElementById(
+        'identificacion'
+      ) as HTMLInputElement;
+      if (inputIdFocus) {
+        inputIdFocus.focus();
+      }
+    }, 100);
+  }
+
+  moveFocusEnter(nextId: string) {
+    setTimeout(() => {
+      const nextInput = document.getElementById(nextId) as HTMLInputElement;
+      if (nextInput) {
+        nextInput.focus();
+      }
+    }, 100);
   }
 
   getProductosFromService() {
@@ -300,11 +319,44 @@ export class FormVentaComponent implements OnInit {
           window.alert('La venta se ha registrado con exito!');
 
           this.bottomSaveActive = false;
+          this.formBloqueado = true;
         }
       },
       error: (error) => {
         window.alert('Error al guardar la venta: ' + error.message);
       },
     });
+  }
+
+  nuevaVentaButton(): void {
+    this.codigoProducto = '';
+    this.productoFiltro = '';
+    this.detalleVentas = [];
+
+    this.subTotal = 0;
+    this.descuento = 0;
+    this.TotalGeneral = 0;
+    this.bottomSaveActive = false;
+    this.formBloqueado = false;
+
+    setTimeout(() => {
+      const inputIdentificacion = document.getElementById(
+        'identificacion'
+      ) as HTMLInputElement;
+      if (inputIdentificacion) {
+        inputIdentificacion.value = 'Sin identificacion';
+        inputIdentificacion.focus();
+      }
+      const inputCliente = document.getElementById(
+        'cliente'
+      ) as HTMLInputElement;
+      if (inputCliente) {
+        inputCliente.value = 'Cliente mostrador';
+      }
+      const inputCodigo = document.getElementById('codigo') as HTMLInputElement;
+      if (inputCodigo) {
+        inputCodigo.value = '';
+      }
+    }, 100);
   }
 }
