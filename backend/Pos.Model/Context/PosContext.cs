@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Pos.Model.Model;
+using Pos.Model.Vistas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,13 @@ namespace Pos.Model.Context
         public DbSet<DetalleVenta> DetallesVenta { get; set; }
 
         public DbSet<NumeroDocumento> NumeroDocumentos { get; set; }
+
+        // consultas
+        public DbSet<ProductosMasVendidosView> ProductosMasVendidos { get; set; }
+        public DbSet<ProductosPorAgotarView> ProductosPorAgotar { get; set; }
+        public DbSet<VentasUltimaSemanaView> VentasUltimaSemanas { get; set; }
+        public DbSet<TotalProductosVendidosView> TotalProductosVendidos { get; set; }
+        public DbSet<IngresosUltimasSemanasView> IngresosUltimaSemana { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -317,6 +325,13 @@ namespace Pos.Model.Context
 
                 entity.HasIndex(d => d.documento).IsUnique();
             });
+
+            modelBuilder.Entity<ProductosMasVendidosView>().HasNoKey().ToView("vw_productos_mas_vendidos");
+            modelBuilder.Entity<ProductosPorAgotarView>().HasNoKey().ToView("vw_productos_por_agotar");
+            modelBuilder.Entity<VentasUltimaSemanaView>().HasNoKey().ToView("vw_ventas_ultima_semana");
+            modelBuilder.Entity<TotalProductosVendidosView>().HasNoKey().ToView("vw_total_productos_vendidos");
+            modelBuilder.Entity<IngresosUltimasSemanasView>().HasNoKey().ToView("vw_total_ingresos_ultima_semana");
+
         }
     }
 }
